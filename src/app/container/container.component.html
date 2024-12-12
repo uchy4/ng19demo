@@ -1,0 +1,8 @@
+<div class="content">
+    <mat-card class="w-40" appearance="outlined">
+        <ng-content seles="[title]"></ng-content>
+        <ng-content></ng-content>
+        <ng-content select="[actions]"></ng-content>
+        <ng-container *ngIf="!!templateRef" [ngTemplateOutlet]="templateRef"></ng-container>
+    </mat-card>
+</div>

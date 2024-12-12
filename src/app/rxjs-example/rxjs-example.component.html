@@ -1,0 +1,33 @@
+<button mat-flat-button (click)="count()">Start Count</button>
+@if(results.length > 0) {
+<mat-card appearance="outlined" class="mt-1">
+    <div class="gap-1">
+        @for (num of results; track num) {
+        <span>{{num}}</span>
+        }
+    </div>
+</mat-card>
+}
+
+<div class="mt-1">
+    <button mat-flat-button (click)="fetchCharacters()">Fetch Api Data</button>
+    <div class="mt-1 gap-1 vertical">
+            @for (character of characters; track character.id) {
+                <mat-card appearance="outlined">
+                    <h2> {{character.name}} </h2>
+                    @if (hasDetails(character.id)) {
+                        <mat-chip-set>
+                            <mat-chip>{{characterDetails[character.id].race.name}}</mat-chip>
+                            <mat-chip>{{characterDetails[character.id].species.name}}</mat-chip>
+                            <mat-chip>{{characterDetails[character.id].group.name}}</mat-chip>
+                            @for (weapon of characterDetails[character.id].weapons; track weapon) {
+                                <mat-chip>{{weapon}}</mat-chip>
+                            }
+                        </mat-chip-set>
+                    } @else {
+                        <button mat-button (click)="fetchCharacterDetailsById(character.id)">Fetch Details</button>
+                    }
+                </mat-card>
+            }
+    </div>
+</div>

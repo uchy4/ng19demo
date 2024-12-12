@@ -1,0 +1,17 @@
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.gap-1 {
+    display: flex;
+    gap: .9rem;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: var(--mat-sys-secondary);
+}

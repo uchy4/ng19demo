@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@use 'theme-colors' as theme;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: theme.$primary-palette,
+      tertiary: theme.$tertiary-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 42 42"><g transform="rotate(45 20 20)"><rect x="5" y="5" width="30" height="30" fill="none" stroke="%23ededed" stroke-width="2" stroke-dasharray="4,4"/></g></svg>') repeat;
+  background-color: white;
+}
+mat-card {
+  padding: 2rem;
+  width: 100%;
+  max-width: 40rem;
+  gap: 1rem;
+
+  h2 {
+      color: var(--mat-sys-primary);
+      margin: 0;
+  }
+}
